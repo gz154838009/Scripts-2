@@ -4,7 +4,7 @@
 #   branches: 
 #   - master 
 
-name: txnews
+name: txnews3
 
 on:
   workflow_dispatch:
@@ -28,11 +28,11 @@ jobs:
           npm install
       - name: '运行 【腾讯新闻】'
         run: |
-          node Task/txnews.js
+          node Task/txnews3.js
         env:
-          cookieVal: ${{ secrets.TXNEWS_COOKIE }}
-          signurlVal: ${{ secrets.TXNEWS_SIGN }}
-          videoVal: ${{ secrets.TXNEWS_VIDEO }}
+          cookieVal: ${{ secrets.TXNEWS3_COOKIE }}
+          signurlVal: ${{ secrets.TXNEWS3_SIGN }}
+          videoVal: ${{ secrets.TXNEWS3_VIDEO }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TXNEWS_NOTIFY_CONTROL: ${{ secrets.TXNEWS_NOTIFY_CONTROL }}
