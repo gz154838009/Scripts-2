@@ -255,7 +255,7 @@ function StepsTotal() {
 
 
 //阶梯红包到账
-function Redpack() {
+//function Redpack() {
   return new Promise((resolve, reject) => {
     setTimeout(()=>{
       const cashUrl = {
