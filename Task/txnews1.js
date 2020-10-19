@@ -255,7 +255,7 @@ function StepsTotal() {
 
 
 //阶梯红包到账
-//function Redpack() {
+function Redpack() {
   return new Promise((resolve, reject) => {
     setTimeout(()=>{
       const cashUrl = {
@@ -267,11 +267,11 @@ function StepsTotal() {
         let rcash = JSON.parse(data)
         try{
           redpacks = rcash.data.award.num/100
-          if (rcash.ret == 0&&redpacks>0&&getreadred > 0){
+//          if (rcash.ret == 0&&redpacks>0&&getreadred > 0){
             redpackres = `【阅读红包】到账`+redpacks+`元 🌷\n`
             $.log("阅读红包到账"+redpacks+"元\n")
           }
-          else if (rcash.ret == 0&&redpacks>0){
+//          else if (rcash.ret == 0&&redpacks>0){
             redpackres = `【视频红包】到账`+redpacks+`元 🌷\n`
             $.log("视频红包到账"+redpacks+"元\n")
           }
