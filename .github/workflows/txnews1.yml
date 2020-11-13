@@ -4,7 +4,7 @@
 #   branches: 
 #   - master 
 
-name: 腾讯新闻1
+name: txnews1
 
 on:
   workflow_dispatch:
@@ -22,21 +22,17 @@ jobs:
       TXNEWS_COOKIE1: ${{ secrets.TXNEWS_COOKIE1 }}
       TXNEWS_VIDEO1: ${{ secrets.TXNEWS_VIDEO1 }}
     steps:
-      - name: Checkout
-        run: |
-          git clone https://github.com/Sunert/Scripts.git ~/Scripts
-      - name: Use Node.js 12.x
+      - uses: actions/checkout@v1
+      - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: 14.x
       - name: npm install
         run: |
-          cd ~/Scripts
           npm install
       - name: '运行 【腾讯新闻】'
-        if: env.TXNEWS_COOKIE
+        if: env.TXNEWS_COOKIE1
         run: |
-          cd ~/Scripts
           node Task/txnews.js
         env:
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
