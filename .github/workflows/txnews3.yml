@@ -4,12 +4,12 @@
 #   branches: 
 #   - master 
 
-name: 腾讯新闻3
+name: txnews3
 
 on:
   workflow_dispatch:
   schedule:
-     - cron: '*/7 * * * *'
+     - cron: '*/7 1-17 * * *'
   watch:
      types: started
     
@@ -17,28 +17,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
-    env:
-      TXNEWS_SIGN: ${{ secrets.TXNEWS_SIGN3 }}
-      TXNEWS_COOKIE: ${{ secrets.TXNEWS_COOKIE3 }}
-      TXNEWS_VIDEO: ${{ secrets.TXNEWS_VIDEO3 }}
     steps:
-      - name: Checkout
-        run: |
-          git clone https://github.com/Sunert/Scripts.git ~/Scripts
-      - name: Use Node.js 12.x
+      - uses: actions/checkout@v1
+      - name: Use Node.js 10.x
         uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: 10.x
       - name: npm install
         run: |
-          cd ~/Scripts
           npm install
       - name: '运行 【腾讯新闻】'
-        if: env.TXNEWS_COOKIE
         run: |
-          cd ~/Scripts
           node Task/txnews.js
         env:
+          TXNEWS_SIGN: ${{ secrets.TXNEWS_SIGN3 }}
+          TXNEWS_COOKIE: ${{ secrets.TXNEWS_COOKIE3 }}
+          TXNEWS_VIDEO: ${{ secrets.TXNEWS_VIDEO3 }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TXNEWS_NOTIFY_CONTROL: ${{ secrets.TXNEWS_NOTIFY_CONTROL }}
