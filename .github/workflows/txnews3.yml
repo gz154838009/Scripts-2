@@ -18,9 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-      TXNEWS_SIGN3: ${{ secrets.TXNEWS_SIGN3 }}
-      TXNEWS_COOKIE3: ${{ secrets.TXNEWS_COOKIE3 }}
-      TXNEWS_VIDEO3: ${{ secrets.TXNEWS_VIDEO3 }}
+      TXNEWS_SIGN: ${{ secrets.TXNEWS_SIGN3 }}
+      TXNEWS_COOKIE: ${{ secrets.TXNEWS_COOKIE3 }}
+      TXNEWS_VIDEO: ${{ secrets.TXNEWS_VIDEO3 }}
     steps:
       - name: Checkout
         run: |
@@ -34,7 +34,7 @@ jobs:
           cd ~/Scripts
           npm install
       - name: '运行 【腾讯新闻】'
-        if: env.TXNEWS_COOKIE3
+        if: env.TXNEWS_COOKIE
         run: |
           cd ~/Scripts
           node Task/txnews.js
