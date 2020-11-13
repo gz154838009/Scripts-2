@@ -4,12 +4,12 @@
 #   branches: 
 #   - master 
 
-name: txnews3
+name: 腾讯新闻3
 
 on:
   workflow_dispatch:
   schedule:
-     - cron: '*/7 1-17 * * *'
+     - cron: '*/7 * * * *'
   watch:
      types: started
     
@@ -17,25 +17,33 @@ jobs:
   build:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
+    env:
+      TXNEWS_SIGN3: ${{ secrets.TXNEWS_SIGN3 }}
+      TXNEWS_COOKIE3: ${{ secrets.TXNEWS_COOKIE3 }}
+      TXNEWS_VIDEO3: ${{ secrets.TXNEWS_VIDEO3 }}
     steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js 10.x
+      - name: Checkout
+        run: |
+          git clone https://github.com/Sunert/Scripts.git ~/Scripts
+      - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
-          node-version: 10.x
+          node-version: 12.x
       - name: npm install
         run: |
+          cd ~/Scripts
           npm install
       - name: '运行 【腾讯新闻】'
+        if: env.TXNEWS_COOKIE3
         run: |
+          cd ~/Scripts
           node Task/txnews.js
         env:
-          TXNEWS_SIGN: ${{ secrets.TXNEWS_SIGN3 }}
-          TXNEWS_COOKIE: ${{ secrets.TXNEWS_COOKIE3 }}
-          TXNEWS_VIDEO: ${{ secrets.TXNEWS_VIDEO3 }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TXNEWS_NOTIFY_CONTROL: ${{ secrets.TXNEWS_NOTIFY_CONTROL }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
           BARK_SOUND: ${{ secrets.BARK_SOUND }}
+          DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
+          DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
