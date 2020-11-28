@@ -26,20 +26,7 @@ const cookiesArr = [
     qqreadheaderVal: JSON.stringify({"Cookie":"ywguid=154838009;ywkey=ywhiEtxQJDvJ;platform=ios;channel=mqqmina;mpVersion=0.29.4;qq_ver=8.4.17;os_ver=iOS 12.4.9;mpos_ver=1.21.0;platform=ios;openid=BA878E411E39256508E20A78CDB3D223","Accept":"*/*","Content-Type":"application/json","ywsession":"l2nd08br8cqqymke12zx4lq9kbcodi7v","mpversion":"0.29.4","Connection":"keep-alive","Host":"mqqapi.reader.qq.com","User-Agent":"QQ/8.4.17.638 CFNetwork/978.0.7 Darwin/18.7.0","Referer":"https://appservice.qq.com/1110657249/0.29.4/page-frame.html","Accept-Encoding":"br, gzip, deflate","Accept-Language":"zh-cn"}),
     qqreadtimeurlVal:
       "https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=1005&refer=-1&bid=%2031731918&readTime=8074&read_type=0&conttype=1&read_status=0&chapter_info=%5B%7B%221%22%3A%7B%22readTime%22%3A8074%2C%22pay_status%22%3A0%7D%7D%5D&sp=-1",
-    qqreadtimeheaderVal: JSON.stringify({
-      ywsession: "zzjvjyinsn2cp9l6s6vyor8yfba270qc",
-      Cookie:
-        "ywguid=111;ywkey=ywRdaJX3UDkK;platform=ios;channel=mqqmina;mpVersion=0.28.0;qq_ver=8.4.5;os_ver=iOS 13.2.3;mpos_ver=1.18.0;platform=ios;openid=9B30CCBDB51661025A626639108C1AA0",
-      Connection: "keep-alive",
-      "Content-Type": "application/json",
-      Accept: "*/*",
-      Host: "mqqapi.reader.qq.com",
-      "User-Agent": "QQ/8.4.5.626 CFNetwork/1120 Darwin/19.0.0",
-      Referer: "https://appservice.qq.com/1110657249/0.28.0/page-frame.html",
-      "Accept-Language": "zh-cn",
-      "Accept-Encoding": "gzip, deflate, br",
-      mpversion: "0.28.0",
-    }),
+    qqreadtimeheaderVal: JSON.stringify({"Cookie":"ywguid=154838009;ywkey=ywhiEtxQJDvJ;platform=ios;channel=mqqmina;mpVersion=0.29.4;qq_ver=8.4.17;os_ver=iOS 12.4.9;mpos_ver=1.21.0;platform=ios;openid=BA878E411E39256508E20A78CDB3D223","Accept":"*/*","Content-Type":"application/json","ywsession":"l2nd08br8cqqymke12zx4lq9kbcodi7v","mpversion":"0.29.4","Connection":"keep-alive","Host":"mqqapi.reader.qq.com","User-Agent":"QQ/8.4.17.638 CFNetwork/978.0.7 Darwin/18.7.0","Referer":"https://appservice.qq.com/1110657249/0.29.4/page-frame.html","Accept-Encoding":"br, gzip, deflate","Accept-Language":"zh-cn"}),
   },
   {
     qqreadheaderVal: JSON.stringify({
