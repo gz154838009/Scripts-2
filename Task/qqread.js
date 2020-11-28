@@ -552,7 +552,7 @@ function showmsg() {
     box.data.count == 72
   )
     $.msg(jsname, "", tz); //宝箱每18次通知一次
-tz=""
+    tz=""
 }
 
 // prettier-ignore
