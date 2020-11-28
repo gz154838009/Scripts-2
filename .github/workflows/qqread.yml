@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: Task/qqread.js
+          repository: https://github.com/gz154838009/Scripts-2/raw/master/Task/qqread.js
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
