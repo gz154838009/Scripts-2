@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: https://github.com/gz154838009/Scripts-2/raw/master/Task/qqread.js
+          repository: gz154838009/Scripts-2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -39,5 +39,5 @@ jobs:
           npm install tough-cookie
       - name: '运行 【QQ阅读】'
         run: |
-          node qqread.js
+          node Task/qqread.js
         
