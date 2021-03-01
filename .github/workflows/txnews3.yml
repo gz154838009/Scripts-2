@@ -4,7 +4,7 @@
 #   branches: 
 #   - master 
 
-name: 腾讯新闻
+name: 腾讯新闻3
 
 on:
   workflow_dispatch:
@@ -18,9 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-      TXNEWS_SIGN: ${{ secrets.TXNEWS_SIGN }}
-      TXNEWS_COOKIE: ${{ secrets.TXNEWS_COOKIE }}
-      TXNEWS_VIDEO: ${{ secrets.TXNEWS_VIDEO }}
+      TXNEWS_SIGN: ${{ secrets.TXNEWS_SIGN3 }}
+      TXNEWS_COOKIE: ${{ secrets.TXNEWS_COOKIE3 }}
+      TXNEWS_VIDEO: ${{ secrets.TXNEWS_VIDEO3 }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
